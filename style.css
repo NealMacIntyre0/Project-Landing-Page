@@ -1,1 +1,139 @@
-Hello World
+/* Universal Box-Sizing for consistent element sizing */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* Base body styles */
+body {
+    /* Apply the Roboto font */
+    font-family: 'Roboto', sans-serif;
+    margin: 0; /* Remove default body margin */
+    padding: 0; /* Remove default body padding */
+    line-height: 1.6; /* Improve readability of text */
+}
+
+/* --- Header Section Styling --- */
+.main-header {
+    background-color: #1F2937; /* Navy blue background */
+    color: #F9FAF8; /* Light text color */
+    padding: 16px; /* p-4 equivalent */
+}
+
+.header-content-wrapper {
+    max-width: 1200px; /* Equivalent to a 'container' width */
+    margin: 0 auto; /* mx-auto equivalent for centering */
+    display: flex; /* flex equivalent */
+    justify-content: space-between; /* justify-between equivalent */
+    align-items: center; /* items-center equivalent */
+    padding: 0 16px; /* px-4 equivalent for inner padding */
+}
+
+.header-logo {
+    font-size: 24px; /* text-2xl equivalent */
+    font-weight: bold; /* font-bold equivalent */
+    text-decoration: none; /* Remove underline from link */
+    color: inherit; /* Inherit color from parent */
+}
+
+.main-nav .nav-list {
+    list-style: none; /* Remove bullet points from list */
+    margin: 0;
+    padding: 0;
+    display: flex; /* flex equivalent */
+    gap: 16px; /* space-x-4 equivalent */
+}
+
+.main-nav .nav-list a {
+    color: inherit; /* Inherit color from parent */
+    text-decoration: none; /* Remove underline from links */
+    transition: text-decoration 0.3s ease; /* Smooth transition for hover */
+}
+
+.main-nav .nav-list a:hover {
+    text-decoration: underline; /* hover:underline equivalent */
+}
+
+/* --- Hero Section Styling --- */
+.hero-section {
+    background-color: #1F2937; /* Navy blue background */
+    color: #F9FAF8; /* Light text color */
+    padding-top: 64px; /* py-16 equivalent */
+    padding-bottom: 64px; /* py-16 equivalent */
+}
+
+.hero-content-wrapper {
+    max-width: 1200px; /* Equivalent to a 'container' width */
+    margin: 0 auto; /* mx-auto equivalent for centering */
+    display: flex; /* flex equivalent */
+    flex-direction: column; /* flex-col equivalent (default for mobile) */
+    align-items: center; /* items-center equivalent */
+    justify-content: space-between; /* justify-between equivalent */
+    padding: 0 16px; /* px-4 equivalent for inner padding */
+}
+
+.hero-text-container {
+    text-align: center; /* text-center equivalent (default for mobile) */
+    width: 100%; /* Default width for mobile */
+    margin-bottom: 32px; /* mb-8 equivalent for spacing below text on mobile */
+}
+
+.main-heading {
+    font-size: 48px; /* text-5xl equivalent */
+    font-weight: bold; /* font-bold equivalent */
+    line-height: 1.25; /* leading-tight equivalent */
+    margin-bottom: 16px; /* mb-4 equivalent */
+}
+
+.sub-text {
+    font-size: 18px; /* text-lg equivalent */
+    color: #E5E7EB; /* text-gray-300 equivalent */
+    margin-bottom: 24px; /* mb-6 equivalent */
+}
+
+.signup-button {
+    background-color: #3B82F6; /* bg-blue-600 equivalent */
+    color: #FFFFFF; /* text-white equivalent */
+    font-weight: bold; /* font-bold equivalent */
+    padding: 12px 32px; /* py-3 px-8 equivalent */
+    border-radius: 8px; /* rounded-lg equivalent */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* shadow-lg equivalent */
+    transition: background-color 0.3s ease; /* transition duration-300 equivalent */
+    border: none; /* Remove default button border */
+    cursor: pointer; /* Indicate it's clickable */
+}
+
+.signup-button:hover {
+    background-color: #2563EB; /* hover:bg-blue-700 equivalent */
+}
+
+.hero-image-container {
+    width: 100%; /* Default width for mobile */
+    display: flex; /* flex equivalent */
+    justify-content: center; /* justify-center equivalent */
+}
+
+.hero-image {
+    max-width: 100%; /* max-w-full equivalent */
+    height: auto; /* h-auto equivalent */
+    border-radius: 8px; /* rounded-lg equivalent */
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2); /* shadow-xl equivalent */
+}
+
+/* --- Responsive Design (md: breakpoint equivalent) --- */
+@media (min-width: 768px) { /* md: breakpoint starts at 768px */
+    .hero-content-wrapper {
+        flex-direction: row; /* md:flex-row equivalent */
+        text-align: left; /* md:text-left equivalent */
+    }
+
+    .hero-text-container {
+        width: 50%; /* md:w-1/2 equivalent */
+        margin-bottom: 0; /* md:mb-0 equivalent */
+        padding-right: 32px; /* Add some spacing between text and image */
+    }
+
+    .hero-image-container {
+        width: 50%; /* md:w-1/2 equivalent */
+        padding-left: 32px; /* Add some spacing between text and image */
+    }
+}
