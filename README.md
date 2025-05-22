@@ -1,1 +1,1 @@
-# Project-Landing-Page
+This is for the landing page project for The Odin Project!!
