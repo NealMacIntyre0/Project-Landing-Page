@@ -143,7 +143,7 @@ body {
     gap: 20px;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px 16px; /* Adjusted padding */
+    padding: 20px 16px;
 }
 
 .info-item {
@@ -155,7 +155,7 @@ body {
     border-radius: 8px;
     padding: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    flex-basis: 220px; /* Adjusted from fixed width */
+    flex-basis: 220px;
     flex-grow: 1;
     max-width: calc(25% - 15px);
 }
@@ -165,16 +165,13 @@ body {
     height: auto;
     border-radius: 4px;
     margin-bottom: 10px;
-    border: 3px solid #60A5FA; /* Added blue border */
-    /* Uncomment if you want circular images */
-    /* border-radius: 50%; */
-    /* object-fit: cover; */
+    border: 3px solid #60A5FA;
 }
 
 .item-text {
-    color: #1F2937; /* Darker color */
-    font-size: 1em; /* Slightly larger font */
-    line-height: 1.5; /* Relaxed line height */
+    color: #1F2937;
+    font-size: 1em;
+    line-height: 1.5;
     margin-top: 10px;
 }
 
@@ -209,68 +206,181 @@ body {
     margin-right: 20px; /* Indent from the right edge */
 }
 
-/* --- Responsive Design (md: breakpoint equivalent) --- */
-@media (min-width: 768px) { /* md: breakpoint starts at 768px */
+/* --- Call-to-Action Section Styling --- */
+.cta-section {
+    background-color: #F9FAF8; /* Light background for the overall section */
+    padding: 80px 16px; /* Generous vertical padding */
+    display: flex; /* Helps center the inner content wrapper */
+    justify-content: center;
+    align-items: center;
+}
+
+.cta-content-wrapper {
+    background-color: #3B82F6; /* The main blue color for the inner box */
+    color: #F9FAF8; /* Light text color for content inside this box */
+    max-width: 1000px; /* Constrains the width of the blue box */
+    width: 100%; /* Ensures it takes full width up to max-width */
+    margin: 0 auto; /* Centers the blue box horizontally */
+    padding: 40px 60px; /* Inner padding for text and button */
+    border-radius: 8px; /* Rounded corners for the blue box */
+    display: flex; /* Enable flexbox to align text and button side-by-side */
+    justify-content: space-between; /* Pushes text to left, button to right */
+    align-items: center; /* Vertically centers text and button */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow for depth */
+}
+
+.cta-text-container {
+    text-align: left; /* Ensures text is left-aligned within its container */
+    margin-right: 30px; /* Space between the text and the button */
+    flex-grow: 1; /* Allows the text container to take up available space */
+}
+
+.cta-heading {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #F9FAF8; /* Explicitly ensure heading is light */
+}
+
+.cta-subtext {
+    font-size: 18px;
+    color: #E5E7EB; /* Slightly desaturated white for subtext, softer look */
+    margin-bottom: 0; /* No bottom margin, as button is next */
+}
+
+.cta-button {
+    flex-shrink: 0; /* Prevents the button from shrinking on smaller screens */
+    border: 2px solid #F9FAF8; /* A white border to contrast with the blue background */
+    background-color: transparent; /* Makes the button background transparent */
+    /* Other button styles (padding, font-weight, border-radius) are inherited from .signup-button */
+}
+
+.cta-button:hover {
+    background-color: rgba(249, 250, 248, 0.1); /* Subtle white overlay on hover */
+    border-color: #FFFFFF; /* Solid white border on hover */
+}
+
+/* --- Footer Section Styling --- */
+.main-footer {
+    background-color: #1F2937; /* Dark background matching header */
+    color: #E5E7EB; /* Light text color */
+    padding: 32px; /* Vertical padding */
+    text-align: center; /* Center the copyright text */
+    font-size: 16px;
+}
+
+.footer-text {
+    margin: 0; /* Remove default paragraph margin */
+}
+
+/* --- Responsive Design (Media Queries) --- */
+
+/* For screens 768px and wider (typical tablet landscape, small desktop) */
+@media (min-width: 768px) {
     .hero-content-wrapper {
-        flex-direction: row; /* md:flex-row equivalent */
-        text-align: left; /* md:text-left equivalent */
+        flex-direction: row; /* Layout hero text and image side-by-side */
+        text-align: left;
     }
-
     .hero-text-container {
-        width: 50%; /* md:w-1/2 equivalent */
-        margin-bottom: 0; /* md:mb-0 equivalent */
-        padding-right: 32px; /* Add some spacing between text and image */
+        width: 50%;
+        margin-bottom: 0;
+        padding-right: 32px;
     }
-
     .hero-image-container {
-        width: 50%; /* md:w-1/2 equivalent */
-        padding-left: 32px; /* Add some spacing between text and image */
+        width: 50%;
+        padding-left: 32px;
     }
 
-    /* Responsive adjustments for info items */
+    /* Info items: 2 per row on medium screens */
     .info-item {
-        max-width: calc(50% - 10px); /* 2 items per row on medium screens */
-        flex-basis: 200px; /* Slightly smaller for tablets */
+        max-width: calc(50% - 10px); /* 2 items per row with gap */
+        flex-basis: 200px;
     }
 
-    /* Responsive adjustments for quote section */
+    /* Quote section adjustments for wider screens */
     .quote-text {
-        font-size: 28px; /* Adjust font size for smaller screens */
+        font-size: 28px;
     }
-
     .quote-author {
         font-size: 20px;
     }
-}
 
-@media (max-width: 600px) { /* Added new breakpoint for info items */
-    .info-item {
-        max-width: calc(50% - 10px); /* Still 2 items per row */
+    /* CTA section: text and button side-by-side on wider screens */
+    .cta-content-wrapper {
+        flex-direction: row;
+        text-align: left;
+    }
+    .cta-text-container {
+        margin-right: 30px;
+        margin-bottom: 0;
+    }
+    .cta-heading {
+        font-size: 32px;
+    }
+    .cta-subtext {
+        font-size: 18px;
     }
 }
 
-@media (max-width: 480px) { /* Smallest screens (phones) */
+/* For screens 600px and wider (some larger phones, smaller tablets) */
+@media (min-width: 600px) and (max-width: 767px) {
+    /* Info items: still 2 per row, consistent with 768px breakpoint */
     .info-item {
-        width: 90%; /* Take up more width on very small screens */
-        max-width: none; /* Remove max-width constraint for single column */
-        flex-basis: auto; /* Let content dictate height/width more */
+        max-width: calc(50% - 10px);
+    }
+    /* CTA adjustments for this range (defaults to flex-direction: column below 768px) */
+    .cta-content-wrapper {
+        padding: 30px 40px;
+    }
+    .cta-heading {
+        font-size: 28px;
+    }
+    .cta-subtext {
+        font-size: 16px;
+    }
+}
+
+
+/* For screens smaller than 480px (most mobile phones) */
+@media (max-width: 480px) {
+    /* Info items: single column */
+    .info-item {
+        width: 90%;
+        max-width: none;
+        flex-basis: auto;
     }
 
+    /* Hero section text adjustments */
     .main-heading {
-        font-size: 36px; /* Adjust heading size for smaller screens */
+        font-size: 36px;
     }
-
     .sub-text {
-        font-size: 16px; /* Adjust subtext size for smaller screens */
+        font-size: 16px;
     }
 
-    /* Further adjust for mobile quote section */
+    /* Quote section adjustments */
     .quote-text {
         font-size: 22px;
     }
-
     .quote-author {
         font-size: 18px;
         margin-right: 10px;
+    }
+
+    /* CTA section adjustments for smallest screens */
+    .cta-content-wrapper {
+        flex-direction: column; /* Ensure stacking */
+        text-align: center;
+        padding: 25px 20px;
+    }
+    .cta-text-container {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+    .cta-heading {
+        font-size: 24px;
+    }
+    .cta-subtext {
+        font-size: 16px;
     }
 }
